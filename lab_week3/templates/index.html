@@ -1,24 +1,6 @@
 {% extends 'base.html'%} {% block content%}
 
-<h1>List of Events</h1>
- <section class="events-list">
-
-    {% for event in events %}
-    <section class="single-event">
-            <h3>
-            {{ event.name}}
-        </h3>
-        <p>date: {{ event.date}}
-        {% if event.recurring %}
-                <span class="repeate-symbol"> &#10227;</span> </p>
-        {% endif %}
-        <p>location: {{ event.location}}</p>
-        <p> {{ event.description}}</p>
-        <p> {{ event.num_guest}} guest</p> <br>
-    </section>
-    {% endfor %}
-
- </section>
+</section>
 <div>
     <h2>Add new event</h2>
  <form action="/events" method="post">
@@ -39,4 +21,24 @@
  </form>
 
 </div>
+
+<h1>List of Events</h1>
+ <section class="events-list">
+
+    {% for event in events %}
+    <section class="single-event">
+            <h3>
+            {{ event.name}}
+        </h3>
+        <p>date: {{ event.date}}
+        {% if event.recurring %}
+                <span class="repeate-symbol"> &#10227;</span> </p>
+        {% endif %}
+        <p>location: {{ event.location}}</p>
+        <p> {{ event.description}}</p>
+        <p> {{ event.num_guest}} guest</p> <br>
+    </section>
+    {% endfor %}
+
+
 {% endblock%}
