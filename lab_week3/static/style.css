@@ -1,0 +1,22 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.repeate-symbol{
+    font-size: 30px;
+    color: red;
+}
+.events-list{
+    display: flex;
+    
+    
+}
+.single-event{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 300px;
+    margin: 20px;
+    padding: 10px;
+    background-color: aquamarine;
+    
+}

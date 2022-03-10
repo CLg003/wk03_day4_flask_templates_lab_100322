@@ -4,19 +4,20 @@
  <section class="events-list">
 
     {% for event in events %}
-  <h3>
-      {{ event.name}}
-  </h3>
-  <p>date: {{ event.date}}
-  {% if event.recurring %}
-        <span> &#10227;</span> </p>
-  {% endif %}
-  <p>location: {{ event.location}}</p>
-  <p> {{ event.description}}</p>
-  <p> {{ event.num_guest}} guest</p> <br>
-  
+    <section class="single-event">
+            <h3>
+            {{ event.name}}
+        </h3>
+        <p>date: {{ event.date}}
+        {% if event.recurring %}
+                <span class="repeate-symbol"> &#10227;</span> </p>
+        {% endif %}
+        <p>location: {{ event.location}}</p>
+        <p> {{ event.description}}</p>
+        <p> {{ event.num_guest}} guest</p> <br>
+    </section>
     {% endfor %}
-    
+
  </section>
 <div>
     <h2>Add new event</h2>
