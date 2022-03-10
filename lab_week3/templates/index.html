@@ -7,12 +7,16 @@
   <h3>
       {{ event.name}}
   </h3>
-  <p>date: {{ event.date}}</p> 
+  <p>date: {{ event.date}}
+  {% if event.recurring %}
+        <span> &#10227;</span> </p>
+  {% endif %}
   <p>location: {{ event.location}}</p>
   <p> {{ event.description}}</p>
   <p> {{ event.num_guest}} guest</p> <br>
-
+  
     {% endfor %}
+    
  </section>
 <div>
     <h2>Add new event</h2>
@@ -26,7 +30,9 @@
     <label for="description">Event Description</label>
     <input type="text" name="description" id="description">
     <label for="guest">Event Guest</label>
-    <input type="number" step="1" name="guests" id="guests">
+    <input type="number" step="1" name="guest" id="guest"><br>
+    <input type="checkbox" name="recurring" id="recurring">
+    <label for="recurring">Recurrring event?</label>
     <input type="submit" value="Create Event" name="" id="create-event">
 
  </form>
