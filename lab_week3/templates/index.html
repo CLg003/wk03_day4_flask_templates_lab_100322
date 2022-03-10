@@ -1,5 +1,35 @@
 {% extends 'base.html'%} {% block content%}
 
-<h1>Events</h1>
+<h1>List of Events</h1>
+ <section class="events-list">
 
+    {% for event in events %}
+  <h3>
+      {{ event.name}}
+  </h3>
+  <p>date: {{ event.date}}</p> 
+  <p>location: {{ event.location}}</p>
+  <p> {{ event.description}}</p>
+  <p> {{ event.num_guest}} guest</p> <br>
+
+    {% endfor %}
+ </section>
+<div>
+    <h2>Add new event</h2>
+ <form action="/events" method="post">
+    <label for="name">Event Name</label>
+    <input type="text" name="name" id="name">
+    <label for="date">Event Date</label>
+    <input type="date" name="date" id="date">
+    <label for="location">Event Location</label>
+    <input type="text" name="location" id="location">
+    <label for="description">Event Description</label>
+    <input type="text" name="description" id="description">
+    <label for="guest">Event Guest</label>
+    <input type="number" step="1" name="guests" id="guests">
+    <input type="submit" value="Create Event" name="" id="create-event">
+
+ </form>
+
+</div>
 {% endblock%}
