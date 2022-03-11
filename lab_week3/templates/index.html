@@ -1,44 +1,54 @@
 {% extends 'base.html'%} {% block content%}
 
-</section>
-<div>
+<div class="form">
     <h2>Add new event</h2>
- <form action="/events" method="post">
-    <label for="name">Event Name</label>
-    <input type="text" name="name" id="name">
-    <label for="date">Event Date</label>
-    <input type="date" name="date" id="date">
-    <label for="location">Event Location</label>
-    <input type="text" name="location" id="location">
-    <label for="description">Event Description</label>
-    <input type="text" name="description" id="description">
-    <label for="guest">Event Guest</label>
-    <input type="number" step="1" name="guest" id="guest"><br>
-    <input type="checkbox" name="recurring" id="recurring">
-    <label for="recurring">Recurrring event?</label>
-    <input type="submit" value="Create Event" name="" id="create-event">
-
- </form>
-
+    <form action="/events" method="post" class="form-fields">
+        <div>
+            <label for="name">Event Name</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div>
+            <label for="date">Event Date</label>
+            <input type="date" name="date" id="date">
+        </div>
+        <div>
+            <label for="location">Event Location</label>
+            <input type="text" name="location" id="location">
+        </div>
+        <div>
+            <label for="description">Event Description</label>
+            <input type="text" name="description" id="description">
+        </div>
+        <div>
+            <label for="guest">Event Guest</label>
+            <input type="number" step="1" name="guest" id="guest">
+        </div>
+        <div>
+            <input type="checkbox" name="recurring" id="recurring">
+            <label for="recurring">Recurrring event?</label>
+        </div>
+        <input type="submit" value="Create Event" id="create-event">
+    </form>
 </div>
-
-<h1>List of Events</h1>
- <section class="events-list">
-
-    {% for event in events %}
-    <section class="single-event">
-            <h3>
-            {{ event.name}}
-        </h3>
-        <p>date: {{ event.date}}
-        {% if event.recurring %}
-                <span class="repeate-symbol"> &#10227;</span> </p>
-        {% endif %}
-        <p>location: {{ event.location}}</p>
-        <p> {{ event.description}}</p>
-        <p> {{ event.num_guest}} guest</p> <br>
+<div class="events">
+    <h1>Upcoming Events...</h1>
+    <section class="events-list">
+        {% for event in events %}
+        <section class="single-event">
+            <h3>{{ event.name }}
+            <span class="date">{{ event.date}}
+                </span></h3>
+            <p class="description">{{ event.description }}</p>
+            <p><b>Where:</b> {{ event.location}}</p>
+            <p><b>Number of guests:</b> {{ event.num_guest }}
+            {% if event.recurring %}
+                <span class="repeat-symbol"> &#10227;</span>
+            {% endif %}</p>
+        </section>
+        {% endfor %}
     </section>
-    {% endfor %}
-
-
+    <aside>
+        <p id="symbol-key"><span class="repeat-key"> &#10227;</span> = recurring event</p>
+    </aside>
+</div>
 {% endblock%}

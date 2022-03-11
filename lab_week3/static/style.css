@@ -1,23 +1,136 @@
-*{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+* {
+    font-family: Karla, Arial, Helvetica, sans-serif;
+    margin: 0;
 }
-.repeate-symbol{
-    font-size: 30px;
-    color: red;
-}
-.events-list{
+
+header {
     display: flex;
-    justify-content: space-evenly;
-    
-    
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(188, 228, 202);
+    padding: 50px;
 }
-.single-event{
+
+header > img {
+    height: 100px;
+    padding-bottom: 20px;
+}
+
+header > h1 > a {
+    font-family: 'Hubballi', Tahoma, sans-serif;
+    text-align: center;
+    font-size: 100px;
+    margin: 0;
+    color: black;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+header > ul > li > a {
+    font-family: 'Supermercado One', Tahoma, sans-serif;
+    text-decoration: none;
+    color: purple;
+}
+
+h1, h2, h3, h4, h5, h6, #create-event {
+    font-family: 'Supermercado One', Tahoma, sans-serif;
+}
+
+body {
+    width: 100%;
+}
+
+main {
+    width: 80%;
+    margin: auto;
+}
+
+.form {
+    padding: 40px;
+}
+
+.form-fields {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+input {
+    padding: 5px;
+    margin: 10px;
+}
+
+#create-event {
+    padding: 15px;
+    font-size: larger;
+}
+
+.events {
+    padding: 0 40px;
+}
+
+.events-list {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+.single-event {
     display: flex;
     flex-direction: column;
     border: 1px solid black;
     width: 300px;
-    margin: 20px;
+    min-height: 150px;
+    /* flex: 20%; */
+    margin: 10px;
     padding: 10px;
-    background-color: aquamarine;
-    
+    background-color: rgb(188, 228, 202);
+    line-height: 1.5;
+}
+
+.single-event > h3 {
+    margin-bottom: 0;
+    font-size: larger;
+}
+
+.date {
+    font-size: smaller;
+    float: right;
+}
+
+.description {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: smaller;
+    font-weight: bold;
+}
+
+.repeat-symbol {
+    font-size: 50px;
+    color: rgba(255, 0, 0, 0.795);
+    float: right;
+    padding-right: 20px;
+}
+
+#symbol-key {
+    font-style: italic;
+    font-size: larger;
+    text-align: right;}
+
+.repeat-key {
+    font-style: normal;
+    font-size: larger;
+    color: rgba(255, 0, 0, 0.795);
+}
+
+footer {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    background-color: rgb(188, 228, 202);
+    padding: 20px;
 }

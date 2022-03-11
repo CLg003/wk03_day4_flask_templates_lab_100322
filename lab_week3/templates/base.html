@@ -2,16 +2,26 @@
 <html>
     <head>
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-        <title>{{ title }} - Event planer</title>
-
+        <link href="https://fonts.googleapis.com/css2?family=Hubballi&family=Karla:wght@400;700&family=Supermercado+One&display=swap" rel="stylesheet">
+        <title>{{ title }} - Event planner</title>
     </head>
     <body>
-        <ul>
-            <li><a href="/events">Home Page</a></li>
-        </ul>
+        <header>
+            <img src="{{ url_for('static', filename='images/calendar_icon.png') }}" alt="calendar icon">
+            <h1><a href="/events">EVENT PLANNER</a></h1>
+            <ul>
+                <li><a href="/events">Home Page</a></li>
+            </ul>
+        </header>
         <hr>
-    {% block content %}
-    {% endblock %}
-
+        <main>
+            {% block content %}
+            {% endblock %}
+            <br>
+        </main>
+        <hr>
+        <footer>
+            <p>&copy 2022</p>
+        </footer>
     </body>
 </html>
